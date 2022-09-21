@@ -26,6 +26,8 @@ import { MdNotificationsNone, MdInfoOutline } from "react-icons/md";
 import { FaEthereum } from "react-icons/fa";
 import routes from "routes.js";
 import { ThemeEditor } from "./ThemeEditor";
+import { Auth } from 'aws-amplify';
+import { useHistory } from "react-router-dom";
 export default function HeaderLinks(props) {
   const { secondary } = props;
   // Chakra Color Mode
@@ -42,6 +44,15 @@ export default function HeaderLinks(props) {
     "14px 17px 40px 4px rgba(112, 144, 176, 0.06)"
   );
   const borderButton = useColorModeValue("secondaryGray.500", "whiteAlpha.200");
+  const history = useHistory()
+  const logout = async () => {
+    try {
+        await Auth.signOut();
+        history.push('/auth/signin')
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+  }
   return (
     <Flex
       w={{ sm: "100%", md: "auto" }}
@@ -255,6 +266,7 @@ export default function HeaderLinks(props) {
               <Text fontSize='sm'>Newsletter Settings</Text>
             </MenuItem>
             <MenuItem
+              onClick={logout}
               _hover={{ bg: "none" }}
               _focus={{ bg: "none" }}
               color='red.400'
