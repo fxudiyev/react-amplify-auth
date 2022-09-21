@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-horizon-staging-83148-authRole",
+      "UnauthRoleArn": "arn:aws:iam::307729769440:role/amplify-horizon-staging-83148-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::307729769440:role/amplify-horizon-staging-83148-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-horizon-staging-83148-deployment",
+      "UnauthRoleName": "amplify-horizon-staging-83148-unauthRole",
+      "StackName": "amplify-horizon-staging-83148",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:307729769440:stack/amplify-horizon-staging-83148/d580a720-3987-11ed-952d-060941d37328",
+      "AmplifyAppId": "d17p517vhmjrqe"
+    },
+    "categories": {
+      "auth": {
+        "horizon": {}
+      }
+    }
+  }
+}
